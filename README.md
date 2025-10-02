@@ -2,6 +2,20 @@
 
 > **Prova de Conceito** de um visualizador de cotações de criptomoedas em tempo real usando Lightweight Charts, Next.js e React Query.
 
+## 🚀 **Demo ao Vivo**
+
+**[👉 Ver Demo na Vercel](https://cryptochart-poc.vercel.app/)**
+
+Visualize cotações de criptomoedas em tempo real sem precisar clonar o projeto!
+
+### ✅ **Status do Projeto**
+- 🚀 **Deploy**: Ativo na Vercel
+- 📊 **Funcionalidades**: Todas implementadas
+- 🔄 **API**: CoinGecko funcionando
+- 📱 **Responsivo**: Testado em mobile
+- ⚡ **Performance**: Otimizado
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-green?style=flat&logo=vercel)](https://cryptochart-poc.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Lightweight Charts](https://img.shields.io/badge/Lightweight%20Charts-5.0.9-orange?style=flat)](https://tradingview.github.io/lightweight-charts/)
@@ -204,6 +218,9 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 2. Conecte sua conta GitHub
 3. Importe este repositório
 4. Deploy automático! 🚀
+
+### **Demo Online**
+**[🔗 cryptochart-poc.vercel.app](https://cryptochart-poc.vercel.app/)** - Veja funcionando agora!
 
 📖 **Guia Completo**: Veja [DEPLOY.md](./DEPLOY.md) para instruções detalhadas
 
