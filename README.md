@@ -205,24 +205,9 @@ pnpm dev
 ### **Acesse a Aplicação**
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 
-## 🌐 Deploy e Hospedagem
+## 🌐 **Demo Online**
 
-### **Opções Gratuitas Recomendadas**
-- 🏆 **Vercel**: Melhor para Next.js com SSR
-- 🌐 **Netlify**: Alternativa sólida
-- 🚂 **Railway**: Mais controle e opções
-- 📄 **GitHub Pages**: Limitado (sem SSR)
-
-### **Deploy Rápido no Vercel**
-1. Acesse [vercel.com](https://vercel.com)
-2. Conecte sua conta GitHub
-3. Importe este repositório
-4. Deploy automático! 🚀
-
-### **Demo Online**
 **[🔗 cryptochart-poc.vercel.app](https://cryptochart-poc.vercel.app/)** - Veja funcionando agora!
-
-📖 **Guia Completo**: Veja [DEPLOY.md](./DEPLOY.md) para instruções detalhadas
 
 ## 🎨 Customizações e Extensões
 
