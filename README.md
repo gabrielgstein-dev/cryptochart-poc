@@ -79,8 +79,10 @@ cryptochart/
 │   ├── info-panel.tsx        # Painel de informações
 │   └── header.tsx            # Cabeçalho da aplicação
 ├── 📁 hooks/                  # Custom Hooks
-│   └── use-crypto-prices.ts  # Hook para buscar dados + React Query
+│   └── use-crypto-prices.ts  # Hook otimizado + React Query
 ├── 📁 lib/                    # Utilitários e configurações
+│   ├── api/                  # Camada de API centralizada
+│   │   └── crypto.ts         # Funções de API com cache SSR
 │   └── providers/
 │       └── query-provider.tsx # Provider do React Query
 └── 📁 types/                  # Definições TypeScript
@@ -100,6 +102,8 @@ cryptochart/
 - **Custom Hooks** - Lógica reutilizável encapsulada
 
 #### 📡 **Integração com APIs**
+- **API Centralizada** - Funções de requisição em `lib/api/`
+- **Cache SSR** - Cache no servidor com revalidação automática
 - **CoinGecko API** - Dados gratuitos sem autenticação
 - **Error Handling** - Tratamento robusto de falhas
 - **Retry Logic** - Tentativas automáticas em caso de erro
@@ -109,6 +113,7 @@ cryptochart/
 ### **Next.js 15**
 - ✅ **App Router** - Roteamento moderno e performático
 - ✅ **Server Components** - Renderização otimizada
+- ✅ **SSR Ready** - Preparado para Server-Side Rendering
 - ✅ **Built-in Optimization** - Imagens, fontes e bundles otimizados
 - ✅ **TypeScript First** - Suporte nativo e excelente DX
 
@@ -132,6 +137,18 @@ cryptochart/
 
 ## 📡 API e Dados
 
+### **Arquitetura de API**
+```typescript
+// lib/api/crypto.ts - API centralizada
+export async function fetchCryptoPrices(coinId: CryptoId, days: number) {
+  const response = await fetch(
+    `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${days}`,
+    { next: { revalidate: 60 } } // Cache SSR de 60 segundos
+  );
+  // ...
+}
+```
+
 ### **CoinGecko API**
 ```typescript
 // Endpoint utilizado
@@ -150,6 +167,7 @@ GET https://api.coingecko.com/api/v3/coins/{id}/market_chart?vs_currency=usd&day
 - 📊 **Dados Históricos** - Até 90 dias de histórico
 - 🌍 **Global** - Suporte a múltiplas moedas fiat
 - ⚡ **Rápida** - Resposta em ~200-500ms
+- 🚀 **Cache SSR** - Reduz requisições desnecessárias
 
 ## 🚀 Como Executar
 
@@ -183,6 +201,8 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 - 🌙 **Dark/Light Mode** - Alternância de temas
 - 📤 **Exportação** - Download de dados em CSV/JSON
 - 🔍 **Comparação** - Múltiplas moedas no mesmo gráfico
+- 🚀 **SSR Implementation** - Dados iniciais renderizados no servidor
+- 💾 **Database Integration** - Cache persistente de dados históricos
 
 ### **Exemplo de Extensão**
 ```typescript
@@ -209,6 +229,9 @@ const candlestickSeries = chart.addSeries(CandlestickSeries, {
 - ✅ **Tree Shaking** - Apenas código utilizado no bundle
 - ✅ **Image Optimization** - Next.js otimiza imagens automaticamente
 - ✅ **Font Optimization** - Fontes carregadas de forma eficiente
+- ✅ **API Centralizada** - Funções de requisição unificadas
+- ✅ **Cache SSR** - Redução de requisições desnecessárias
+- ✅ **Zero Duplicação** - Código limpo e manutenível
 
 ## 🧪 Testes e Qualidade
 
