@@ -175,7 +175,7 @@ GET https://api.coingecko.com/api/v3/coins/{id}/market_chart?vs_currency=usd&day
 - Node.js 18+ 
 - PNPM (recomendado) ou NPM
 
-### **Instalação**
+### **Instalação Local**
 ```bash
 # Clone o repositório
 git clone git@private-git:gabrielgstein-dev/cryptochart-poc.git
@@ -190,6 +190,22 @@ pnpm dev
 
 ### **Acesse a Aplicação**
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador
+
+## 🌐 Deploy e Hospedagem
+
+### **Opções Gratuitas Recomendadas**
+- 🏆 **Vercel**: Melhor para Next.js com SSR
+- 🌐 **Netlify**: Alternativa sólida
+- 🚂 **Railway**: Mais controle e opções
+- 📄 **GitHub Pages**: Limitado (sem SSR)
+
+### **Deploy Rápido no Vercel**
+1. Acesse [vercel.com](https://vercel.com)
+2. Conecte sua conta GitHub
+3. Importe este repositório
+4. Deploy automático! 🚀
+
+📖 **Guia Completo**: Veja [DEPLOY.md](./DEPLOY.md) para instruções detalhadas
 
 ## 🎨 Customizações e Extensões
 
