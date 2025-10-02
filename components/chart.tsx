@@ -6,7 +6,8 @@ import {
   ColorType, 
   IChartApi, 
   ISeriesApi,
-  AreaSeries 
+  AreaSeries,
+  Time
 } from 'lightweight-charts';
 import type { ChartData } from '@/types/crypto';
 
@@ -68,7 +69,11 @@ export function Chart({ data, height = 400 }: ChartProps) {
 
   useEffect(() => {
     if (seriesRef.current && data.length > 0) {
-      seriesRef.current.setData(data);
+      const formattedData = data.map(item => ({
+        time: item.time as Time,
+        value: item.value,
+      }));
+      seriesRef.current.setData(formattedData);
       chartRef.current?.timeScale().fitContent();
     }
   }, [data]);
